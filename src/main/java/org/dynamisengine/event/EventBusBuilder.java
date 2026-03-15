@@ -1,4 +1,4 @@
-package org.dynamis.event;
+package org.dynamisengine.event;
 
 /**
  * Builder for creating configured EventBus instances.

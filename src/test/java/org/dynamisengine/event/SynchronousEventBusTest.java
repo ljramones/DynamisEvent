@@ -1,4 +1,4 @@
-package org.dynamis.event;
+package org.dynamisengine.event;
 
 import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -11,17 +11,17 @@ import java.util.concurrent.ConcurrentLinkedQueue;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
-import org.dynamis.core.event.EngineEvent;
-import org.dynamis.core.event.EventPriority;
-import org.dynamis.core.event.EventSubscription;
+import org.dynamisengine.core.event.EngineEvent;
+import org.dynamisengine.core.event.EventPriority;
+import org.dynamisengine.core.event.EventSubscription;
 import org.junit.jupiter.api.Test;
 
 class SynchronousEventBusTest {
-  record TestEvent(String message) implements EngineEvent {}
+  record TestEvent(String message, long timestamp) implements EngineEvent { TestEvent(String message) { this(message, System.nanoTime()); } }
 
-  record OtherEvent(int value) implements EngineEvent {}
+  record OtherEvent(int value, long timestamp) implements EngineEvent { OtherEvent(int value) { this(value, System.nanoTime()); } }
 
-  record HighPriorityEvent() implements EngineEvent {
+  record HighPriorityEvent(long timestamp) implements EngineEvent { HighPriorityEvent() { this(System.nanoTime()); }
     @Override
     public EventPriority priority() {
       return EventPriority.CRITICAL;

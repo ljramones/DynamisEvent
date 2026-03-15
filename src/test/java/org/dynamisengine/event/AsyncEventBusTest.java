@@ -1,4 +1,4 @@
-package org.dynamis.event;
+package org.dynamisengine.event;
 
 import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -10,13 +10,13 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
-import org.dynamis.core.event.EngineEvent;
-import org.dynamis.core.event.EventSubscription;
+import org.dynamisengine.core.event.EngineEvent;
+import org.dynamisengine.core.event.EventSubscription;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
 
 class AsyncEventBusTest {
-  record TestEvent(String message) implements EngineEvent {}
+  record TestEvent(String message, long timestamp) implements EngineEvent { TestEvent(String message) { this(message, System.nanoTime()); } }
 
   private AsyncEventBus bus;
 

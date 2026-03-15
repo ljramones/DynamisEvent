@@ -1,6 +1,6 @@
-package org.dynamis.event;
+package org.dynamisengine.event;
 
-import org.dynamis.core.event.EngineEvent;
+import org.dynamisengine.core.event.EngineEvent;
 
 /**
  * Handles events that were published without any matching subscribers.

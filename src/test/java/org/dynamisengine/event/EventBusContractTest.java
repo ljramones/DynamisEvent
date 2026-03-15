@@ -1,14 +1,14 @@
-package org.dynamis.event;
+package org.dynamisengine.event;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
-import org.dynamis.core.event.EngineEvent;
-import org.dynamis.core.event.EventListener;
-import org.dynamis.core.event.EventPriority;
-import org.dynamis.core.event.EventSubscription;
+import org.dynamisengine.core.event.EngineEvent;
+import org.dynamisengine.core.event.EventListener;
+import org.dynamisengine.core.event.EventPriority;
+import org.dynamisengine.core.event.EventSubscription;
 import org.junit.jupiter.api.Test;
 
 class EventBusContractTest {
@@ -88,5 +88,5 @@ class EventBusContractTest {
     assertEquals(2, publishCount.get());
   }
 
-  private record TestEvent() implements EngineEvent {}
+  private record TestEvent(long timestamp) implements EngineEvent { TestEvent() { this(System.nanoTime()); } }
 }

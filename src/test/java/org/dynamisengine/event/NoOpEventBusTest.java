@@ -1,4 +1,4 @@
-package org.dynamis.event;
+package org.dynamisengine.event;
 
 import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -7,13 +7,13 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.util.List;
-import org.dynamis.core.event.EngineEvent;
-import org.dynamis.core.event.EventPriority;
-import org.dynamis.core.event.EventSubscription;
+import org.dynamisengine.core.event.EngineEvent;
+import org.dynamisengine.core.event.EventPriority;
+import org.dynamisengine.core.event.EventSubscription;
 import org.junit.jupiter.api.Test;
 
 class NoOpEventBusTest {
-  record TestEvent(String message) implements EngineEvent {}
+  record TestEvent(String message, long timestamp) implements EngineEvent { TestEvent(String message) { this(message, System.nanoTime()); } }
 
   @Test
   void subscribeReturnsNonNullSubscription() {
@@ -107,5 +107,5 @@ class NoOpEventBusTest {
     assertDoesNotThrow(bus::shutdown);
   }
 
-  private record AnotherTestEvent() implements EngineEvent {}
+  private record AnotherTestEvent(long timestamp) implements EngineEvent { AnotherTestEvent() { this(System.nanoTime()); } }
 }

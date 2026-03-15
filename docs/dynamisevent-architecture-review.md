@@ -13,7 +13,7 @@ This pass does not refactor code or rename APIs. It establishes strict ownership
 Repository shape:
 
 - Single-module Java 25 JAR (`pom.xml`, packaging `jar`)
-- Main package: `org.dynamis.event`
+- Main package: `org.dynamisengine.event`
 - Public event bus contracts and implementations currently coexist in the same package:
   - `EventBus`
   - `EventBusBuilder`
@@ -101,7 +101,7 @@ Preferred boundary posture:
 
 ### 4.1 Canonical public boundary (current)
 
-Current public surface is effectively everything public in `org.dynamis.event`, including concrete implementations.
+Current public surface is effectively everything public in `org.dynamisengine.event`, including concrete implementations.
 
 This includes both:
 

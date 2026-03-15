@@ -8,7 +8,7 @@ This repository is currently minimal and contains documentation only:
   - `src/test/java/...` for tests
   - `src/main/resources/...` for non-code assets
 
-Keep package names under `org.dynamis.event` (or a clearly aligned module path) and group code by bus concern (builder, dispatch, metrics, dead-letter handling).
+Keep package names under `org.dynamisengine.event` (or a clearly aligned module path) and group code by bus concern (builder, dispatch, metrics, dead-letter handling).
 
 ## Build, Test, and Development Commands
 No build wrapper (`mvnw`/`gradlew`) is committed yet. When adding runtime code, also add the corresponding build files and use documented commands, for example:

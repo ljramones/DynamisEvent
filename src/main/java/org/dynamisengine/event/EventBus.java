@@ -1,10 +1,10 @@
-package org.dynamis.event;
+package org.dynamisengine.event;
 
 import java.util.Collection;
-import org.dynamis.core.event.EngineEvent;
-import org.dynamis.core.event.EventListener;
-import org.dynamis.core.event.EventPriority;
-import org.dynamis.core.event.EventSubscription;
+import org.dynamisengine.core.event.EngineEvent;
+import org.dynamisengine.core.event.EventListener;
+import org.dynamisengine.core.event.EventPriority;
+import org.dynamisengine.core.event.EventSubscription;
 
 /**
  * Core event bus contract for publishing and subscribing to engine events.

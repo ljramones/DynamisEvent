@@ -1,4 +1,4 @@
-package org.dynamis.event;
+package org.dynamisengine.event;
 
 /**
  * Immutable snapshot of event bus runtime metrics.

@@ -1,4 +1,4 @@
-package org.dynamis.event;
+package org.dynamisengine.event;
 
 import java.util.Objects;
 import java.util.concurrent.ExecutorService;
@@ -6,11 +6,11 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicBoolean;
-import org.dynamis.core.event.EngineEvent;
-import org.dynamis.core.event.EventListener;
-import org.dynamis.core.event.EventPriority;
-import org.dynamis.core.event.EventSubscription;
-import org.dynamis.core.logging.DynamisLogger;
+import org.dynamisengine.core.event.EngineEvent;
+import org.dynamisengine.core.event.EventListener;
+import org.dynamisengine.core.event.EventPriority;
+import org.dynamisengine.core.event.EventSubscription;
+import org.dynamisengine.core.logging.DynamisLogger;
 
 /**
  * Event bus that dispatches events asynchronously on a fixed thread pool.
